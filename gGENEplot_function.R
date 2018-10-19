@@ -1,7 +1,7 @@
 gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray", 
                       line.size = 2, line.overhang = 0.05, intron.color = "lightblue", exon.color = "blue",
                       ruler = F, ruler.pos = "bottom", ruler.color = "black", ruler.size = line.size/2, ruler.length = F,
-                      mRNA.order = NA, CDS.order = NA){
+                      mRNA.order = NULL, CDS.order = NULL){
   require(gsubfn)
   require(ggplot2)
   
@@ -124,12 +124,24 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
     }
   }
   
+  # segment.order <- c(1:max(df$isoform, na.rm = T))
+  
+  if (is.null(mRNA.order)){
+    mRNA.order <- c(1:max(df$isoform, na.rm = T))
+  } 
+  
+  if (is.null(CDS.order)){
+    CDS.order <- c(1:max(df$isoform, na.rm = T))
+  } 
+  
   x.corr <- max(df$x, na.rm = T) * line.overhang
   df.segment <- data.frame("x" = NA, "xend" = NA, "y" = NA)
-  for (g in 1:max(df$isoform, na.rm = T)){
-    y.corr <- (0.5 * (g - 1))
+  corr <- 0
+  for (g in mRNA.order){
+    y.corr <- (0.5 * corr)
+    corr <- corr + 1
     y.isoform <- y.pos + y.corr
-    data.mRNA <- df[which(df$feature == "mRNA" & df$isoform == g),]
+    data.mRNA <- df[which(df$isoform == g),]
     df.segment <- rbind(df.segment, 
                         c(min(data.mRNA$x, na.rm = T) - x.corr, 
                           max(data.mRNA$x, na.rm = T) + x.corr,
@@ -140,16 +152,25 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
   
   p <- ggplot(data = df.segment) 
   p <- p + geom_segment(aes(x=x, xend=xend, y=y, yend=y), color = line.color, size = line.size)
-  
-  for (g in 1:max(df$isoform, na.rm = T)){
-    y.corr <- (0.5 * (g - 1))
+
+  corr <- 0
+  for (g in mRNA.order){
+    y.corr <- (0.5 * corr)
+    corr <- corr + 1
     data.mRNA <- df[which(df$feature == "mRNA" & df$isoform == g),]
     data.mRNA$y <- data.mRNA$y + y.corr
+    p <- p + geom_polygon(data=data.mRNA, aes(x=x, y=y), fill = intron.color)
+  }
+  
+  corr <- 0
+  for (g in CDS.order){
+    y.corr <- (0.5 * corr)
+    corr <- corr + 1
     data.CDS <- df[which(df$feature == "CDS" & df$isoform == g),]
     data.CDS$y <- data.CDS$y + y.corr
-    p <- p + geom_polygon(data=data.mRNA, aes(x=x, y=y), fill = intron.color)
     p <- p + geom_polygon(data=data.CDS, aes(x=x, y=y), fill = exon.color)
-  }
+  }  
+  
   p <- p + theme(line = element_blank(), axis.title = element_blank(), 
                  axis.text = element_blank(), plot.title = element_text(hjust = 0.5),
                  panel.background = element_blank()) + 
@@ -192,3 +213,23 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
   }
   return (p)
 }
+
+test <- gGENEplot("zfGHRb.gb")
+
+ggsave("zfGHRb_0.001.tiff", plot = test, width = 30, height = 3, units = "cm", dpi = 300)
+ggsave("zfGHRb_0.001_ggsavetest.tiff", test)
+ggsave("zfGHRb_0.001_ggsavetest2.tiff", test, width = 30, height = 3, units = "in")
+ggsave("zfGHRb_0.000_ggsavetest.tiff", test)
+ggsave("zfGHRb_0.001_xcorr.tiff", plot = test, width = 30, height = 3, units = "cm", dpi = 300)
+ggsave("zfGHRb_0.001_xcorr_ratio.tiff", plot = test)
+ggsave("zfGHRb_0.001_xcorr_30_5.tiff", plot = test, width = 30, height = 5, units = "cm", dpi = 300)
+
+test <- gGENEplot("humanGHR.gb", line.size = 1.5)
+ggsave("humanGHR_0.001_xcorr_ggsave_line1.5.tiff", plot = test)
+
+
+gGENEplot("humanGHR.gb", ruler = T, mRNA.order = c(3, 2, 4:9, 1, 11, 10))
+ggsave("humanGHR_ordered.tiff", width = 30, height = 15, units = "cm", dpi = 300)
+gGENEplot("humanGHR.gb", ruler = T, mRNA.order = c(10, 11, 1, 9:4, 3, 2), CDS.order = c(11:1), line.overhang = 0.01)
+ggsave("humanGHR_ordered_opposite_overhang0.01.tiff", width = 30, height = 15, units = "cm", dpi = 300)
+gGENEplot("humanGHR.gb", ruler = T, CDS.order = c(9,2,1,3:8,11,10), line.overhang = 0.01)
