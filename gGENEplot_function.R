@@ -5,8 +5,10 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
   require(gsubfn)
   require(ggplot2)
   
+  # variables
+  y.pos <- 3 # to construct the plot
+  
   input <- readLines(source.file)
-  initdebut <- which(substring(input, 1, 8) == "FEATURES") + 1
   gene.lines <- which(grepl("^[ ]{5}gene", input))
   mRNA.lines <- which(grepl("^[ ]{5}mRNA", input))
   CDS.lines <- which(grepl("^[ ]{5}CDS", input))
@@ -19,9 +21,10 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
     gene.name.list <- c(gene.name.list, gene.name)
   }
   
-  df <- data.frame("gene" = NA, "isoform" = NA, "feature" = NA, "x" = NA, "y" = NA)
-  y.pos <- 3
   
+  df <- data.frame("gene" = NA, "isoform" = NA, "feature" = NA, "x" = NA, "y" = NA)
+  
+  # Get mRNA data from mRNA.ines
   index <- 0
   mRNA <- c("")
   for (i in mRNA.lines){
@@ -67,6 +70,7 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
     }
   }
   
+  # Get CDS data from CDS.ines
   index <- 0
   CDS <- c("")
   for (i in CDS.lines){
@@ -110,8 +114,10 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
   df$y <- as.numeric(df$y)
   df$isoform <- as.numeric(df$isoform)
   
-  
-  # correct block size to make it visible
+  #################################################
+  # correct exon/intron size to make them visible #
+  #################################################
+  # exons
   if (size.percent != 0){
     tot.size <- (max(df$x) - min(df$x)) + 1
     size.min <- floor(tot.size * size.percent)
@@ -124,16 +130,20 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
     }
   }
   
-  # segment.order <- c(1:max(df$isoform, na.rm = T))
-  
+  ##############
+  # Build plot #
+  ##############
+  # change mRNA order
   if (is.null(mRNA.order)){
     mRNA.order <- c(1:max(df$isoform, na.rm = T))
   } 
   
+  # change CDS order
   if (is.null(CDS.order)){
     CDS.order <- c(1:max(df$isoform, na.rm = T))
   } 
   
+  # "genome" line
   x.corr <- max(df$x, na.rm = T) * line.overhang
   df.segment <- data.frame("x" = NA, "xend" = NA, "y" = NA)
   corr <- 0
@@ -152,7 +162,8 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
   
   p <- ggplot(data = df.segment) 
   p <- p + geom_segment(aes(x=x, xend=xend, y=y, yend=y), color = line.color, size = line.size)
-
+  
+  # Add mRNA blocks
   corr <- 0
   for (g in mRNA.order){
     y.corr <- (0.5 * corr)
@@ -162,6 +173,7 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
     p <- p + geom_polygon(data=data.mRNA, aes(x=x, y=y), fill = intron.color)
   }
   
+  # Add CDS blocks
   corr <- 0
   for (g in CDS.order){
     y.corr <- (0.5 * corr)
@@ -171,12 +183,15 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
     p <- p + geom_polygon(data=data.CDS, aes(x=x, y=y), fill = exon.color)
   }  
   
+  # ggplot settings
   p <- p + theme(line = element_blank(), axis.title = element_blank(), 
                  axis.text = element_blank(), plot.title = element_text(hjust = 0.5),
                  panel.background = element_blank()) + 
-           labs(title = gene.name)
+    labs(title = gene.name)
   
-  # add ruler
+  #############
+  # add ruler #
+  #############
   if (ruler){
     x.ruler <- max(df$x, na.rm = T) * 0.05
     if (!ruler.length){
@@ -187,8 +202,6 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
     }
     label.ruler <- xend.ruler - x.ruler 
     label.ruler <- paste(label.ruler, "bp")
-    # y.ruler.corr <- (max(data.CDS$y, na.rm = T) - 3)/25
-    # y.ruler.corr <- 0.2
     if (length(df.segment$x) - 2 < 10){
       y.ruler.corr <- 0.4 / (10 - (length(df.segment$x) - 2))
     } else {
@@ -213,23 +226,3 @@ gGENEplot <- function(source.file, size.percent = 0.001, line.color = "gray",
   }
   return (p)
 }
-
-test <- gGENEplot("zfGHRb.gb")
-
-ggsave("zfGHRb_0.001.tiff", plot = test, width = 30, height = 3, units = "cm", dpi = 300)
-ggsave("zfGHRb_0.001_ggsavetest.tiff", test)
-ggsave("zfGHRb_0.001_ggsavetest2.tiff", test, width = 30, height = 3, units = "in")
-ggsave("zfGHRb_0.000_ggsavetest.tiff", test)
-ggsave("zfGHRb_0.001_xcorr.tiff", plot = test, width = 30, height = 3, units = "cm", dpi = 300)
-ggsave("zfGHRb_0.001_xcorr_ratio.tiff", plot = test)
-ggsave("zfGHRb_0.001_xcorr_30_5.tiff", plot = test, width = 30, height = 5, units = "cm", dpi = 300)
-
-test <- gGENEplot("humanGHR.gb", line.size = 1.5)
-ggsave("humanGHR_0.001_xcorr_ggsave_line1.5.tiff", plot = test)
-
-
-gGENEplot("humanGHR.gb", ruler = T, mRNA.order = c(3, 2, 4:9, 1, 11, 10))
-ggsave("humanGHR_ordered.tiff", width = 30, height = 15, units = "cm", dpi = 300)
-gGENEplot("humanGHR.gb", ruler = T, mRNA.order = c(10, 11, 1, 9:4, 3, 2), CDS.order = c(11:1), line.overhang = 0.01)
-ggsave("humanGHR_ordered_opposite_overhang0.01.tiff", width = 30, height = 15, units = "cm", dpi = 300)
-gGENEplot("humanGHR.gb", ruler = T, CDS.order = c(9,2,1,3:8,11,10), line.overhang = 0.01)
