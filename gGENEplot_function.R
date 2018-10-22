@@ -4,8 +4,8 @@ gGENEplot <- function(source.file, min.size = 0.001,
                       mRNA.names = NULL, CDS.names = NULL, 
                       check.introns = T, names.order = NULL,
                       mRNA.order = NULL, CDS.order = NULL,
-                      ruler = F, ruler.pos = "bottom", ruler.color = "black",
-                      ruler.size = line.size/2, ruler.length = F){
+                      bar = F, bar.pos = "bottom", bar.color = "black",
+                      bar.size = line.size/2, bar.length = 0){
   require(gsubfn)
   require(ggplot2)
   
@@ -15,7 +15,7 @@ gGENEplot <- function(source.file, min.size = 0.001,
   # messages
   ERROR.min.size <- "min.size argument cannot be negative. Reset to default value."
   ERROR.overh <- "line.overhang argument cannot be negative. Reset to default value."
-  ERROR.ruler <- "ruler.pos argument must be 'bottom' or 'top'. Ruler is not shown."
+  ERROR.bar <- "bar.pos argument must be 'bottom' or 'top'. bar is not shown."
   
   #################
   # PARSE gb file #
@@ -399,39 +399,38 @@ gGENEplot <- function(source.file, min.size = 0.001,
   }
   
   #############
-  # add ruler #
+  # add bar #
   #############
-  if (ruler){
-    x.ruler <- max(df$x, na.rm = T) * 0.05
-    if (!ruler.length){
-      exp <- floor(log10(max(df$x, na.rm = T))) - 1
-      xend.ruler <- x.ruler + 10^exp
-    } else {
-      xend.ruler <- x.ruler + ruler.length
+  if (bar){
+    x.bar <- min(df$x, na.rm = T) + max(df$x, na.rm = T) * 0.05
+    exp <- floor(log10(max(df$x, na.rm = T))) - 1
+    xend.bar <- x.bar + 10^exp
+    if (bar.length > 0) {
+      xend.bar <- x.bar + bar.length
     }
-    label.ruler <- xend.ruler - x.ruler 
-    label.ruler <- paste(label.ruler, "bp")
+    label.bar <- xend.bar - x.bar 
+    label.bar <- paste(label.bar, "bp")
     if (length(df.segment$x) - 2 < 10){
-      y.ruler.corr <- 0.4 / (10 - (length(df.segment$x) - 2))
+      y.bar.corr <- 0.4 / (10 - (length(df.segment$x) - 2))
     } else {
-      y.ruler.corr <- 0.2
+      y.bar.corr <- 0.2
     }
-    if (ruler.pos == "bottom"){
-      y.ruler <- 2.8 - y.ruler.corr
-      p <- p + geom_segment(aes(x = x.ruler, xend = xend.ruler, y = y.ruler, 
-                                yend = y.ruler), 
-                            color = ruler.color, size = ruler.size)
-      p <- p + annotate("text", x = (x.ruler+xend.ruler)/2,
-                        y = y.ruler - y.ruler.corr, label = label.ruler)
-    } else if (ruler.pos == "top") {
-      y.ruler <- max(data.CDS$y, na.rm = T) + y.ruler.corr
-      p <- p + geom_segment(aes(x = x.ruler, xend = xend.ruler, y = y.ruler,
-                                yend = y.ruler), 
-                            color = ruler.color, size = ruler.size)
-      p <- p + annotate("text", x = (x.ruler+xend.ruler)/2, 
-                        y = y.ruler + y.ruler.corr, label = label.ruler)
+    if (bar.pos == "bottom"){
+      y.bar <- 2.8 - y.bar.corr
+      p <- p + geom_segment(aes(x = x.bar, xend = xend.bar, y = y.bar, 
+                                yend = y.bar), 
+                            color = bar.color, size = bar.size)
+      p <- p + annotate("text", x = (x.bar+xend.bar)/2,
+                        y = y.bar - y.bar.corr, label = label.bar)
+    } else if (bar.pos == "top") {
+      y.bar <- max(data.CDS$y, na.rm = T) + y.bar.corr
+      p <- p + geom_segment(aes(x = x.bar, xend = xend.bar, y = y.bar,
+                                yend = y.bar), 
+                            color = bar.color, size = bar.size)
+      p <- p + annotate("text", x = (x.bar+xend.bar)/2, 
+                        y = y.bar + y.bar.corr, label = label.bar)
     } else {
-      warning(ERROR.ruler)
+      warning(ERROR.bar)
       return (p)
     }
   }
