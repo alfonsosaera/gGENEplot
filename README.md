@@ -41,10 +41,10 @@ gGENEplot("gb_files/sequence.gb")
 and save it using `ggsave`, which also allows you to modify its proportions
 
 ``` r
-ggsave("README_files/sequence.tiff", width = 30, height = 5, units = "cm")
+ggsave("README_files/sequence.png", width = 30, height = 5, units = "cm")
 ```
 
-![](README_files/sequence.tiff)
+![](README_files/sequence.png)
 
 Scale bar
 ---------
@@ -53,10 +53,10 @@ An scale bar can be added using `bar`
 
 ``` r
 p <- gGENEplot("gb_files/sequence.gb", bar = T)
-ggsave("README_files/sequence2.tiff", width = 30, height = 5, units = "cm")
+ggsave("README_files/sequence2.png", width = 30, height = 5, units = "cm")
 ```
 
-![](README_files/sequence2.tiff)
+![](README_files/sequence2.png)
 
 and further customized with `bar.pos`, `bar.color`, `bar.size` and `bar.length`
 
@@ -69,10 +69,10 @@ p <- gGENEplot("gb_files/sequence.gb", bar = T,
                # see appearance for details on line.size
                bar.length = 500    # length in base pairs
                )
-ggsave("README_files/sequence3.tiff", width = 30, height = 5, units = "cm")
+ggsave("README_files/sequence3.png", width = 30, height = 5, units = "cm")
 ```
 
-![](README_files/sequence3.tiff)
+![](README_files/sequence3.png)
 
 Appearance
 ----------
@@ -84,10 +84,10 @@ p <- gGENEplot("gb_files/sequence.gb", bar = T,
                line.overhang = 0.3,   # portion of the line before/after gene
                intron.color = "green", exon.color = "red",
                bar.size = 1) 
-ggsave("README_files/sequence4.tiff", width = 30, height = 5, units = "cm")
+ggsave("README_files/sequence4.png", width = 30, height = 5, units = "cm")
 ```
 
-![](README_files/sequence4.tiff)
+![](README_files/sequence4.png)
 
 The `line.overhang` argument can be set to a percentage of the total length of the gene (0 to 1) or an absolute length in base pair number (&gt;1)
 
@@ -95,28 +95,28 @@ The `min.size` argument controls the minimum size that an exon must have so it c
 
 ``` r
 p <- gGENEplot("gb_files/sequence2.gb", bar = T)
-ggsave("README_files/sequence5.tiff", width = 30, height = 5, units = "cm")
+ggsave("README_files/sequence5.png", width = 30, height = 5, units = "cm")
 ```
 
-![](README_files/sequence5.tiff)
+![](README_files/sequence5.png)
 
 `min.size` set to 0.005
 
 ``` r
 p <- gGENEplot("gb_files/sequence2.gb", bar = T, min.size = 0.002)
-ggsave("README_files/sequence6.tiff", width = 30, height = 5, units = "cm")
+ggsave("README_files/sequence6.png", width = 30, height = 5, units = "cm")
 ```
 
-![](README_files/sequence6.tiff)
+![](README_files/sequence6.png)
 
 `min.size` set to 1000
 
 ``` r
 p <- gGENEplot("gb_files/sequence2.gb", bar = T, min.size = 200)
-ggsave("README_files/sequence6.tiff", width = 30, height = 5, units = "cm")
+ggsave("README_files/sequence6.png", width = 30, height = 5, units = "cm")
 ```
 
-![](README_files/sequence6.tiff)
+![](README_files/sequence6.png)
 
 Dealing with more than one transcript
 -------------------------------------
@@ -125,10 +125,10 @@ Dealing with more than one transcript
 
 ``` r
 p <- gGENEplot("gb_files/humanTUB.gb")
-ggsave("README_files/sequence7.tiff", width = 30, height = 7, units = "cm")
+ggsave("README_files/sequence7.png", width = 30, height = 7, units = "cm")
 ```
 
-![](README_files/sequence7.tiff)
+![](README_files/sequence7.png)
 
 However, a caveat of using genbank files is that mRNA transcript names and CDS transcript names do not have the same exact name so it is difficult to make an automatic parser. The function has two ways of dealing with this problems, providing the order of the transcripts or the names.
 
@@ -138,16 +138,16 @@ The previous plot can be corrected using `mRNA.order`
 
 ``` r
 p <- gGENEplot("gb_files/humanTUB.gb", mRNA.order = c(2,1))
-ggsave("README_files/sequence8.tiff", width = 30, height = 7, units = "cm")
+ggsave("README_files/sequence8.png", width = 30, height = 7, units = "cm")
 ```
 
-![](README_files/sequence8.tiff)
+![](README_files/sequence8.png)
 
 or `CDS.order`
 
 ``` r
 p <- gGENEplot("gb_files/humanTUB.gb", CDS.order = c(2,1))
-ggsave("README_files/sequence9.tiff", width = 30, height = 7, units = "cm")
+ggsave("README_files/sequence9.png", width = 30, height = 7, units = "cm")
 ```
 
-![](README_files/sequence9.tiff)
+![](README_files/sequence9.png)
