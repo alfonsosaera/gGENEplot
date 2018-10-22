@@ -1,0 +1,345 @@
+LOCUS       NC_000017               5899 bp    DNA     linear   CON 26-MAR-2018
+DEFINITION  Homo sapiens chromosome 17, GRCh38.p12 Primary Assembly.
+ACCESSION   NC_000017 REGION: 42609340..42615238
+VERSION     NC_000017.11
+DBLINK      BioProject: PRJNA168
+            Assembly: GCF_000001405.38
+KEYWORDS    RefSeq.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 5899)
+  AUTHORS   Zody,M.C., Garber,M., Adams,D.J., Sharpe,T., Harrow,J.,
+            Lupski,J.R., Nicholson,C., Searle,S.M., Wilming,L., Young,S.K.,
+            Abouelleil,A., Allen,N.R., Bi,W., Bloom,T., Borowsky,M.L.,
+            Bugalter,B.E., Butler,J., Chang,J.L., Chen,C.K., Cook,A., Corum,B.,
+            Cuomo,C.A., de Jong,P.J., DeCaprio,D., Dewar,K., FitzGerald,M.,
+            Gilbert,J., Gibson,R., Gnerre,S., Goldstein,S., Grafham,D.V.,
+            Grocock,R., Hafez,N., Hagopian,D.S., Hart,E., Norman,C.H.,
+            Humphray,S., Jaffe,D.B., Jones,M., Kamal,M., Khodiyar,V.K.,
+            LaButti,K., Laird,G., Lehoczky,J., Liu,X., Lokyitsang,T.,
+            Loveland,J., Lui,A., Macdonald,P., Major,J.E., Matthews,L.,
+            Mauceli,E., McCarroll,S.A., Mihalev,A.H., Mudge,J., Nguyen,C.,
+            Nicol,R., O'Leary,S.B., Osoegawa,K., Schwartz,D.C., Shaw-Smith,C.,
+            Stankiewicz,P., Steward,C., Swarbreck,D., Venkataraman,V.,
+            Whittaker,C.A., Yang,X., Zimmer,A.R., Bradley,A., Hubbard,T.,
+            Birren,B.W., Rogers,J., Lander,E.S. and Nusbaum,C.
+  TITLE     DNA sequence of human chromosome 17 and analysis of rearrangement
+            in the human lineage
+  JOURNAL   Nature 440 (7087), 1045-1049 (2006)
+   PUBMED   16625196
+REFERENCE   2  (bases 1 to 5899)
+  CONSRTM   International Human Genome Sequencing Consortium
+  TITLE     Finishing the euchromatic sequence of the human genome
+  JOURNAL   Nature 431 (7011), 931-945 (2004)
+   PUBMED   15496913
+REFERENCE   3  (bases 1 to 5899)
+  AUTHORS   Lander,E.S., Linton,L.M., Birren,B., Nusbaum,C., Zody,M.C.,
+            Baldwin,J., Devon,K., Dewar,K., Doyle,M., FitzHugh,W., Funke,R.,
+            Gage,D., Harris,K., Heaford,A., Howland,J., Kann,L., Lehoczky,J.,
+            LeVine,R., McEwan,P., McKernan,K., Meldrim,J., Mesirov,J.P.,
+            Miranda,C., Morris,W., Naylor,J., Raymond,C., Rosetti,M.,
+            Santos,R., Sheridan,A., Sougnez,C., Stange-Thomann,N.,
+            Stojanovic,N., Subramanian,A., Wyman,D., Rogers,J., Sulston,J.,
+            Ainscough,R., Beck,S., Bentley,D., Burton,J., Clee,C., Carter,N.,
+            Coulson,A., Deadman,R., Deloukas,P., Dunham,A., Dunham,I.,
+            Durbin,R., French,L., Grafham,D., Gregory,S., Hubbard,T.,
+            Humphray,S., Hunt,A., Jones,M., Lloyd,C., McMurray,A., Matthews,L.,
+            Mercer,S., Milne,S., Mullikin,J.C., Mungall,A., Plumb,R., Ross,M.,
+            Shownkeen,R., Sims,S., Waterston,R.H., Wilson,R.K., Hillier,L.W.,
+            McPherson,J.D., Marra,M.A., Mardis,E.R., Fulton,L.A.,
+            Chinwalla,A.T., Pepin,K.H., Gish,W.R., Chissoe,S.L., Wendl,M.C.,
+            Delehaunty,K.D., Miner,T.L., Delehaunty,A., Kramer,J.B., Cook,L.L.,
+            Fulton,R.S., Johnson,D.L., Minx,P.J., Clifton,S.W., Hawkins,T.,
+            Branscomb,E., Predki,P., Richardson,P., Wenning,S., Slezak,T.,
+            Doggett,N., Cheng,J.F., Olsen,A., Lucas,S., Elkin,C.,
+            Uberbacher,E., Frazier,M., Gibbs,R.A., Muzny,D.M., Scherer,S.E.,
+            Bouck,J.B., Sodergren,E.J., Worley,K.C., Rives,C.M., Gorrell,J.H.,
+            Metzker,M.L., Naylor,S.L., Kucherlapati,R.S., Nelson,D.L.,
+            Weinstock,G.M., Sakaki,Y., Fujiyama,A., Hattori,M., Yada,T.,
+            Toyoda,A., Itoh,T., Kawagoe,C., Watanabe,H., Totoki,Y., Taylor,T.,
+            Weissenbach,J., Heilig,R., Saurin,W., Artiguenave,F., Brottier,P.,
+            Bruls,T., Pelletier,E., Robert,C., Wincker,P., Smith,D.R.,
+            Doucette-Stamm,L., Rubenfield,M., Weinstock,K., Lee,H.M.,
+            Dubois,J., Rosenthal,A., Platzer,M., Nyakatura,G., Taudien,S.,
+            Rump,A., Yang,H., Yu,J., Wang,J., Huang,G., Gu,J., Hood,L.,
+            Rowen,L., Madan,A., Qin,S., Davis,R.W., Federspiel,N.A.,
+            Abola,A.P., Proctor,M.J., Myers,R.M., Schmutz,J., Dickson,M.,
+            Grimwood,J., Cox,D.R., Olson,M.V., Kaul,R., Raymond,C., Shimizu,N.,
+            Kawasaki,K., Minoshima,S., Evans,G.A., Athanasiou,M., Schultz,R.,
+            Roe,B.A., Chen,F., Pan,H., Ramser,J., Lehrach,H., Reinhardt,R.,
+            McCombie,W.R., de la Bastide,M., Dedhia,N., Blocker,H.,
+            Hornischer,K., Nordsiek,G., Agarwala,R., Aravind,L., Bailey,J.A.,
+            Bateman,A., Batzoglou,S., Birney,E., Bork,P., Brown,D.G.,
+            Burge,C.B., Cerutti,L., Chen,H.C., Church,D., Clamp,M.,
+            Copley,R.R., Doerks,T., Eddy,S.R., Eichler,E.E., Furey,T.S.,
+            Galagan,J., Gilbert,J.G., Harmon,C., Hayashizaki,Y., Haussler,D.,
+            Hermjakob,H., Hokamp,K., Jang,W., Johnson,L.S., Jones,T.A.,
+            Kasif,S., Kaspryzk,A., Kennedy,S., Kent,W.J., Kitts,P.,
+            Koonin,E.V., Korf,I., Kulp,D., Lancet,D., Lowe,T.M., McLysaght,A.,
+            Mikkelsen,T., Moran,J.V., Mulder,N., Pollara,V.J., Ponting,C.P.,
+            Schuler,G., Schultz,J., Slater,G., Smit,A.F., Stupka,E.,
+            Szustakowski,J., Thierry-Mieg,D., Thierry-Mieg,J., Wagner,L.,
+            Wallis,J., Wheeler,R., Williams,A., Wolf,Y.I., Wolfe,K.H.,
+            Yang,S.P., Yeh,R.F., Collins,F., Guyer,M.S., Peterson,J.,
+            Felsenfeld,A., Wetterstrand,K.A., Patrinos,A., Morgan,M.J., de
+            Jong,P., Catanese,J.J., Osoegawa,K., Shizuya,H., Choi,S. and
+            Chen,Y.J.
+  CONSRTM   International Human Genome Sequencing Consortium
+  TITLE     Initial sequencing and analysis of the human genome
+  JOURNAL   Nature 409 (6822), 860-921 (2001)
+   PUBMED   11237011
+  REMARK    Erratum:[Nature 2001 Aug 2;412(6846):565]
+COMMENT     REFSEQ INFORMATION: The reference sequence is identical to
+            CM000679.2.
+            On Feb 3, 2014 this sequence version replaced NC_000017.10.
+            Assembly Name: GRCh38.p12 Primary Assembly
+            The DNA sequence is composed of genomic sequence, primarily
+            finished clones that were sequenced as part of the Human Genome
+            Project. PCR products and WGS shotgun sequence have been added
+            where necessary to fill gaps or correct errors. All such additions
+            are manually curated by GRC staff. For more information see:
+            https://genomereference.org.
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Name             :: Homo sapiens Annotation Release 109
+            Annotation Version          :: 109
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 8.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..5899
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="17"
+     gene            complement(<1..88)
+                     /gene="RETREG3"
+                     /gene_synonym="FAM134C"
+                     /note="reticulophagy regulator family member 3; Derived by
+                     automated computational analysis using gene prediction
+                     method: BestRefSeq,Gnomon."
+                     /db_xref="GeneID:162427"
+                     /db_xref="HGNC:HGNC:27258"
+                     /db_xref="MIM:616498"
+     misc_RNA        complement(<1..88)
+                     /gene="RETREG3"
+                     /gene_synonym="FAM134C"
+                     /product="reticulophagy regulator family member 3,
+                     transcript variant 2"
+                     /inference="similar to RNA sequence (same
+                     species):RefSeq:NR_026697.1"
+                     /exception="annotated by transcript or proteomic data"
+                     /note="The RefSeq transcript has 1 non-frameshifting indel
+                     compared to this genomic sequence; Derived by automated
+                     computational analysis using gene prediction method:
+                     BestRefSeq."
+                     /transcript_id="NR_026697.1"
+                     /db_xref="GeneID:162427"
+                     /db_xref="HGNC:HGNC:27258"
+                     /db_xref="MIM:616498"
+     mRNA            complement(<1..88)
+                     /gene="RETREG3"
+                     /gene_synonym="FAM134C"
+                     /product="reticulophagy regulator family member 3,
+                     transcript variant 1"
+                     /inference="similar to RNA sequence, mRNA (same
+                     species):RefSeq:NM_178126.3"
+                     /exception="annotated by transcript or proteomic data"
+                     /note="The RefSeq transcript has 1 non-frameshifting indel
+                     compared to this genomic sequence; Derived by automated
+                     computational analysis using gene prediction method:
+                     BestRefSeq."
+                     /transcript_id="NM_178126.3"
+                     /db_xref="GeneID:162427"
+                     /db_xref="HGNC:HGNC:27258"
+                     /db_xref="MIM:616498"
+     gene            1..5899
+                     /gene="TUBG1"
+                     /gene_synonym="CDCBM4; GCP-1; TUBG; TUBGCP1"
+                     /note="tubulin gamma 1; Derived by automated computational
+                     analysis using gene prediction method: BestRefSeq,Gnomon."
+                     /db_xref="GeneID:7283"
+                     /db_xref="HGNC:HGNC:12417"
+                     /db_xref="MIM:191135"
+     mRNA            join(1..447,769..881,1084..1251,2736..2804,3088..3167,
+                     3608..3734,4308..4394,4510..4659,4921..5073,5157..5318,
+                     5505..5899)
+                     /gene="TUBG1"
+                     /gene_synonym="CDCBM4; GCP-1; TUBG; TUBGCP1"
+                     /product="tubulin gamma 1"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: BestRefSeq."
+                     /transcript_id="NM_001070.4"
+                     /db_xref="GeneID:7283"
+                     /db_xref="HGNC:HGNC:12417"
+                     /db_xref="MIM:191135"
+     mRNA            join(51..447,769..881,1084..1251,2736..2804,3088..3167,
+                     3608..3734,4308..4394,4510..5073,5157..5318,5505..5899)
+                     /gene="TUBG1"
+                     /gene_synonym="CDCBM4; GCP-1; TUBG; TUBGCP1"
+                     /product="tubulin gamma 1, transcript variant X1"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon. Supporting evidence
+                     includes similarity to: 298 ESTs, 130 long SRA reads, 1
+                     Protein, and 100% coverage of the annotated genomic
+                     feature by RNAseq alignments, including 165 samples with
+                     support for all annotated introns"
+                     /transcript_id="XM_024450904.1"
+                     /db_xref="GeneID:7283"
+                     /db_xref="HGNC:HGNC:12417"
+                     /db_xref="MIM:191135"
+     CDS             join(399..447,769..881,1084..1251,2736..2804,3088..3167,
+                     3608..3734,4308..4394,4510..5073,5157..5318,5505..5702)
+                     /gene="TUBG1"
+                     /gene_synonym="CDCBM4; GCP-1; TUBG; TUBGCP1"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon."
+                     /codon_start=1
+                     /product="tubulin gamma-1 chain isoform X1"
+                     /protein_id="XP_024306672.1"
+                     /db_xref="GeneID:7283"
+                     /db_xref="HGNC:HGNC:12417"
+                     /db_xref="MIM:191135"
+                     /translation="MPREIITLQLGQCGNQIGFEFWKQLCAEHGISPEGIVEEFATEG
+                     TDRKDVFFYQADDEHYIPRAVLLDLEPRVIHSILNSPYAKLYNPENIYLSEHGGGAGN
+                     NWASGFSQGEKIHEDIFDIIDREADGSDSLEGFVLCHSIAGGTGSGLGSYLLERLNDR
+                     YPKKLVQTYSVFPNQDEMSDVVVQPYNSLLTLKRLTQNADCVVVLDNTALNRIATDRL
+                     HIQNPSFSQINQLVSTIMSASTTTLRYPGYMNNDLIGLIASLIPTPRLHFLMTGYTPL
+                     TTDQSVRAAFSVPGQAGPGPNRPCPSLSLFPTAPGATLCGPQGAALRDWHRVGDFLAD
+                     LLSTLPLPLASAKEKPKGDCALSAGRVPVSLSYQVASVRKTTVLDVMRRLLQPKNVMV
+                     STGRDRQTNHCYIAILNIIQGEVDPTQVHKSLQRIRERKLANFIPWGPASIQVALSRK
+                     SPYLPSAHRVSGLMMANHTSISSLFERTCRQYDKLRKREAFLEQFRKEDMFKDNFDEM
+                     DTSREIVQQLIDEYHAATRPDYISWGTQEQ"
+     CDS             join(399..447,769..881,1084..1251,2736..2804,3088..3167,
+                     3608..3734,4308..4394,4510..4659,4921..5073,5157..5318,
+                     5505..5702)
+                     /gene="TUBG1"
+                     /gene_synonym="CDCBM4; GCP-1; TUBG; TUBGCP1"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: BestRefSeq."
+                     /codon_start=1
+                     /product="tubulin gamma-1 chain"
+                     /protein_id="NP_001061.2"
+                     /db_xref="CCDS:CCDS11433.1"
+                     /db_xref="GeneID:7283"
+                     /db_xref="HGNC:HGNC:12417"
+                     /db_xref="MIM:191135"
+                     /translation="MPREIITLQLGQCGNQIGFEFWKQLCAEHGISPEGIVEEFATEG
+                     TDRKDVFFYQADDEHYIPRAVLLDLEPRVIHSILNSPYAKLYNPENIYLSEHGGGAGN
+                     NWASGFSQGEKIHEDIFDIIDREADGSDSLEGFVLCHSIAGGTGSGLGSYLLERLNDR
+                     YPKKLVQTYSVFPNQDEMSDVVVQPYNSLLTLKRLTQNADCVVVLDNTALNRIATDRL
+                     HIQNPSFSQINQLVSTIMSASTTTLRYPGYMNNDLIGLIASLIPTPRLHFLMTGYTPL
+                     TTDQSVASVRKTTVLDVMRRLLQPKNVMVSTGRDRQTNHCYIAILNIIQGEVDPTQVH
+                     KSLQRIRERKLANFIPWGPASIQVALSRKSPYLPSAHRVSGLMMANHTSISSLFERTC
+                     RQYDKLRKREAFLEQFRKEDMFKDNFDEMDTSREIVQQLIDEYHAATRPDYISWGTQE
+                     Q"
+ORIGIN      
+        1 acaacatccg gggccgtggc ccgacaagtc acaataacag caactgcgca gatgcgcgat
+       61 tcggcggggg aggtggcttc gcaccacagc gcgcttgcgc gcaggcccaa gcaggcgccc
+      121 acccagaggg gagggaggac gccgtacccc gccctcactg aggcgcggag ccggatccgg
+      181 aggcgccgag ccgcatccgg agccgcgcac gcgcaatctg catgaacgaa ggccagtgct
+      241 taaagacgtg ccattcattg ccagaactcg attctcattg gagcggagga agttcgtggg
+      301 tggagctggt tgtttggcgc ctgcgtcttg cggcgagcgg gctggcgtgc ggcgccgttg
+      361 cgggcgggag cggctgcaac gccggtgcct gaggagcgat gccgagggaa atcatcaccc
+      421 tacagttggg ccagtgcggc aatcagagtg agcgaaactc cggcccctca gctagccagg
+      481 ttccttaggg tcaatgggat ctcgctgtgg gatcctggac tccatctgtc cttgccagaa
+      541 tcgtagttct ctgaaaggcg agacatccct gacccagtgt ccacttgccc aaccccgagg
+      601 ggccctcccc tgcccagtcc ctggcgtaca gtcctttcct cagacacggg agagtcctgc
+      661 ggcttgactt cttatccctg gacgcaggcg cccagtcccc cggctcctga ttggaacctg
+      721 cccggaccta gatatcttct ttctcccctg cccgcccctt ccccccagtt gggttcgagt
+      781 tctggaaaca gctgtgcgcc gagcatggta tcagccccga gggcatcgtg gaggagttcg
+      841 ccaccgaggg cactgaccgc aaggacgtct ttttctacca ggtgccccca gcgacttggc
+      901 cgggggcggc agttgcccaa gggggcggaa gggaagggag tggcctggta ctgggaaccc
+      961 cgctgggcag tagggccagg cggctggctt gaggagggag ggccggaggg agccagagtt
+     1021 gggaggactt cggacttggg ccgccctagc tgattgggcc ccctcctgga ctccccttga
+     1081 caggcagacg atgagcacta catcccccgg gccgtgctgc tggacttgga accccgggtg
+     1141 atccactcca tcctcaactc cccctatgcc aagctctaca acccagagaa catctacctg
+     1201 tcggaacatg gaggaggagc tggcaacaac tgggccagcg gattctccca ggtcgtttcc
+     1261 tattccctgg cagggcccac aactcgctgg gtagggacag gctctatgac gtcccgaaga
+     1321 gagggaaaac cggatcaggg atgtatgaat gctggaggga gagacctggc tgcagggagt
+     1381 ggactatgta atattgtcaa gcgcctacac tagctaatgc agtgtgccag gtcattctaa
+     1441 gtgctttaca tatattaatt tttctaaatc tcccaacaac cctagaagta agtactacag
+     1501 gtccacagtc ccttatctgc ctttccagga tccagaaagc catgaaacca aaggacattt
+     1561 cataactagt ttatcagcaa aaacaaattt caatgaagac aggctgtttt atagtttctt
+     1621 ttttttaatt tttatttatt tatttttttt gagacggagt ctcactctgt cgcccaggct
+     1681 ggagtgcagt ggcacgctct cagctcactg caacctctgc tgcccgggtt caagcgattc
+     1741 tcctgcctca gcctcccgag tagctgggat tacaggtgct tgccatcacg cctggctaat
+     1801 ttttgtattt ttagtagaga cggggtttta ctgtgttagc cagggtggtc ttgatctcct
+     1861 gacctcgtga tccacctgcc tcggcctccc aaagtgctgg gattgcaggc gtgaaccgcc
+     1921 atgcccggcc ctatagtttc tatccaactt actgtcatta gtgatgcctt ttattacaga
+     1981 aatactaata tatttgatta acgtgcttct gattaaataa aaattcccac tggaatttta
+     2041 tttaatatat agtatatata ccataatacc tttctaaaat ctgaaatatt ttgaattcca
+     2101 aaacataact ggccccaaca ctgttagata agggtatatg gacctgtatt attaccttca
+     2161 ttgtacagat gaggaaactg aggcatagag caattaaata agctgcccag agctacatag
+     2221 aagtagagtt aatgggccag gcgtggtggc tcacgcctgt aatcctagca ctttgggagg
+     2281 ccaaggcagg cagatcacct gaggtcagga gttcaagacc agcctagcca acatggtgaa
+     2341 actctgattc tactaaaaat acaaaaaata gctgggcatg gtggcatgcg cctataatcc
+     2401 cagctactgg ggaggctgag gcaggagaat cgcttgaacc caggagacgg aggttgccat
+     2461 gagccaagat cgcgccactg cactccagcc tgggagaaag agagagactc catcgcaaaa
+     2521 aaaaatagag ctaatgtatg aacccaggta gtctgggtgt agagtgcttt cttgtaacca
+     2581 ctgcaccgta ctgcctctca atgtagataa aagcaggtag ctatgctcca taaaaggact
+     2641 tctgggtgtt ataaggagaa ttgagggtgg cttttctgag gtcagagacc tcccatggtt
+     2701 ctgtcccact ctgaccctcc cctatgtctg tacagggaga aaagatccat gaggacattt
+     2761 ttgacatcat agaccgggag gcagatggta gtgacagtct agaggtaagt gtcccaggaa
+     2821 tgctggtagg agccgacatg ggcaaggctt ggcagcaccc tctagaagcg acctgttagg
+     2881 aacaagaccc actcatgtac cctttgcact ggacagaagc tatcaggcct tgccagaaac
+     2941 aaggcagttg cctaagctgt ataagtgagg ggactggatg ggaagcaagg gctcgggaaa
+     3001 atgggagtcc taaaaaacta tgagatgggt ctagtttgac atcctgccac tagatacctg
+     3061 tacactgact gccccttccc catgcagggc tttgtgctgt gtcactccat tgctgggggg
+     3121 acaggctctg gactgggttc ctacctctta gaacggctga atgacaggta agtttgtgtt
+     3181 tggggattag gaaaggtctc caacttggct tcctaaatga ctaggggacc cagcagatat
+     3241 aactccatat ttgctggaac aggaaagagt tcttatattc cctcctatag agaggaaaat
+     3301 gaagttacaa tgactgagaa ccccatcaca ctcccagtag tgggaactgg agcctagaac
+     3361 ctgagccctg gatgaaagtc gagggagtgt ggccaggtct caatttggaa gcccagagtc
+     3421 taagatgtct ctgcccttcc ccctgtaggg ctacagactt ccaaaagtca aggctccctt
+     3481 ctctactgat ttgaccccac cccagtttcg ccatcaagat ttatctgctt ctggacagtt
+     3541 gttagggagc gccatgttca ccaggccttc ggtctgttgc cctgatcctt tccccaaccc
+     3601 ccaccaggta tcctaagaag ctggtgcaga catactcagt gtttcccaac caggacgaga
+     3661 tgagcgatgt ggtggtccag ccttacaatt cactcctcac actcaagagg ctgacgcaga
+     3721 atgcagactg tgtggtgagt cctggattct acctctccca actctcaaca ccccataccc
+     3781 actcgagtct attaaatcat tttcatgtat ttaaaaaaaa tccattttag ccaggtgcag
+     3841 tggctcatga ctgtaatccc atcactttgg gaggccaagg tcgttggatc gtttgagttt
+     3901 aggagttcga gaccagcctg ggcaacatgg cgaaacccca tctctactaa aaatacaaaa
+     3961 attagtcggg agtggtgata tgtgcagaag gatcacttgt gcctcagagg caggggctgc
+     4021 agtgagctga gatcatgtca ctgactgcac tccagccggg gtgacaaagt gaaaccctgt
+     4081 ctcaaaaaac aagaacaaaa aaaaaaactg tttaaataat taagatgaaa agaaaaattt
+     4141 aaaaatccat tttgagccct cctttgccct aggtcagtgc aaatctcttt ccagtgagtc
+     4201 tttctggcca tgaagctcaa aggaaattaa gcttcagagc ctagggtcag gcagagctcc
+     4261 tgtttttctt atccccattg atctgtgatc ctcttctgtc cccccaggtg gtgctggaca
+     4321 acacagccct gaaccggatt gccacagacc gcctgcacat ccagaaccca tccttctccc
+     4381 agatcaacca gctggtgggc ccccactcct ggactccttt ggacttgaag ccctccttgt
+     4441 tggagggtca tttggggaag ggaggtccca cccaggctga ggcccataac atggcacgcc
+     4501 tgtccccagg tgtctaccat catgtcagcc agcaccacca ccctgcgcta ccctggctac
+     4561 atgaacaatg acctcatcgg cctcatcgcc tcgctcattc ccaccccacg gctccacttc
+     4621 ctcatgaccg gctacacccc tctcactacg gaccagtcag taagagcagc cttcagtgtc
+     4681 ccaggccagg ccggccctgg gcccaacagg ccctgtccta gcctttctct cttccccact
+     4741 gccccaggag ctaccctttg tggaccccaa ggcgcggcgc tcagggactg gcacagagtg
+     4801 ggcgactttc ttgctgactt gctctccacc ctccctctgc ctttggcttc tgccaaagag
+     4861 aagccaaagg gggactgtgc cctgagcgct ggccgggtcc ctgtctcact gtcctatcag
+     4921 gtggccagcg tgaggaagac cacggtcctg gatgtcatga ggcggctgct gcagcccaag
+     4981 aacgtgatgg tgtccacagg ccgagaccgc cagaccaacc actgctacat cgccatcctc
+     5041 aacatcatcc agggagaggt ggaccccacc caggtagggg aggccccttc atcccacacc
+     5101 ctggacctgc aggggtagag gagaggccac ctccactgct cctatgccca ccccaggtcc
+     5161 acaagagctt gcagaggatc cgggaacgca agttggccaa cttcatcccg tggggccccg
+     5221 ccagcatcca ggtggccctg tcgaggaagt ctccctacct gccctcggcc caccgggtca
+     5281 gcgggctcat gatggccaac cacaccagca tctcctcggt gagtctcaaa gtttgcacct
+     5341 tttttccctg aatcagtttc ctgactatac ctcacctctc tgcatctgct ggccctgctt
+     5401 ctagcttttt tgctgtgggc atagcccagc cttggttccc cagctttctg ggccacgtta
+     5461 ttctttgaag ttctttgtaa cccctgtttt ctgcacaccc caagctcttc gagagaacct
+     5521 gtcgccagta tgacaagctg cgtaagcggg aggccttcct ggagcagttc cgcaaggagg
+     5581 acatgttcaa ggacaacttt gatgagatgg acacatccag ggagattgtg cagcagctca
+     5641 tcgatgagta ccatgcggcc acacggccag actacatctc ctggggcacc caggagcagt
+     5701 gagtccccca ggacagggac cctcatctgc cttactggtt ggcccaagcc ctgcctgact
+     5761 gaccaccccc tcagagcaca gatcagggac ctcacgcatc tctttctcat atacatggac
+     5821 tctctgttgg cctgcaaaca catttacttc tcctcttatg agactattta tctttaataa
+     5881 agcactggat ataaatcaa
+//
+
