@@ -32,11 +32,15 @@ gGENEplot("gb_files/sequence.gb")
 
     ## Loading required package: gsubfn
 
+    ## Warning: package 'gsubfn' was built under R version 3.4.4
+
     ## Loading required package: proto
+
+    ## Warning: package 'proto' was built under R version 3.4.4
 
     ## Loading required package: ggplot2
 
-![](README_files/figure-markdown_github/unnamed-chunk-2-1.png)
+![](README_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-2-1.png)
 
 and save it using `ggsave`, which also allows you to modify its proportions
 
@@ -288,6 +292,7 @@ ggsave("README_files/tub.png", width = 30, height = 7, units = "cm")
 Furhter customizing the previous gene diagram, vertical lines can be added with `geom_vline`. The coordinates for `xintercept` can be obtained from the [genbank file](https://www.ncbi.nlm.nih.gov/nuccore/NC_000017.11?report=genbank&from=42609340&to=42615238).
 
 ``` r
+p <- gGENEplot("gb_files/humanTUB.gb", mRNA.order = c(2,1))
 p <- p + geom_vline(xintercept = c(399, 447, 769, 881, 1084, 1251, 2736, 2804, 
                                    3088, 3167, 3608, 3734, 4308, 4394, 4510, 
                                    5073, 5157, 5318, 5505, 5702), 
