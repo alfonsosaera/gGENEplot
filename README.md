@@ -77,6 +77,8 @@ ggsave("README_files/sequence3.png", width = 30, height = 5, units = "cm")
 Appearance
 ----------
 
+Line size and color, and mRNA and CDS colors can be modified as desired with `line.color`, `line.size`, `intron.color` and `exon.color`.
+
 ``` r
 p <- gGENEplot("gb_files/sequence.gb", bar = T,
                line.color = "blue",   # color of the "genome" line
@@ -89,9 +91,9 @@ ggsave("README_files/sequence4.png", width = 30, height = 5, units = "cm")
 
 ![](README_files/sequence4.png)
 
-The `line.overhang` argument can be set to a percentage of the total length of the gene (0 to 1) or an absolute length in base pair number (&gt;1)
+The `line.overhang` argument can be set to a percentage of the total length of the gene (0 to 1) or an absolute length in base pair number (&gt;=1).
 
-The `min.size` argument controls the minimum size that an exon must have so it can be visible, if an exon is smaller will be enlarged. As the `min.size` argument, it can be set to a percentage (0 to 1) or an absolute length in base pairs. `min.size` is 0.001.
+The `min.size` argument controls the minimum size that an exon must have so it can be visible, if an exon is smaller will be enlarged. As the `min.size` argument, it can be set to a percentage (0 to 1) or an absolute length in base pairs (&gt;=1). `min.size` is 0.001.
 
 ``` r
 p <- gGENEplot("gb_files/sequence2.gb", bar = T)
@@ -118,6 +120,8 @@ ggsave("README_files/sequence6.png", width = 30, height = 5, units = "cm")
 
 ![](README_files/sequence6.png)
 
+As seen in these diagrams, using `min.size` can make some introns disappear. A solution to this is shown [below](###%20Naming%20transcripts).
+
 Dealing with more than one transcript
 -------------------------------------
 
@@ -130,7 +134,7 @@ ggsave("README_files/sequence7.png", width = 30, height = 7, units = "cm")
 
 ![](README_files/sequence7.png)
 
-However, a caveat of using genbank files is that mRNA transcript names and CDS transcript names do not have the same exact name so it is difficult to make an automatic parser. The function has two ways of dealing with this problems, providing the order of the transcripts or the names.
+However, a caveat of using genbank files is that mRNA transcript names and CDS transcript names do not have the same exact name so it is difficult to make an automatic parser. The function has two ways of dealing with this problem, providing the order of the transcripts or the names.
 
 ### Correcting transcript order
 
@@ -169,7 +173,7 @@ The [human GHR gene](https://www.ncbi.nlm.nih.gov/nuccore/NC_000005.10/?report=g
 |     11     | variant 10 |     11    | variant 2 |
 
 ``` r
-p <- gGENEplot("gb_files/humanGHR.gb", line.overhang = 0.01)
+p <- gGENEplot("gb_files/humanGHR.gb", min.size = 0.002, line.overhang = 0.01)
 ggsave("README_files/human1.png", width = 30, height = 15, units = "cm")
 ```
 
@@ -178,7 +182,7 @@ ggsave("README_files/human1.png", width = 30, height = 15, units = "cm")
 The second transcript from the top shows the order error. This can be fixed with `CDS.order`.
 
 ``` r
-p <- gGENEplot("gb_files/humanGHR.gb", line.overhang = 0.01, 
+p <- gGENEplot("gb_files/humanGHR.gb", min.size = 0.002, line.overhang = 0.01, 
                CDS.order = c(9,2,1,3:8,11,10))
 ggsave("README_files/human2.png", width = 30, height = 15, units = "cm")
 ```
@@ -188,7 +192,7 @@ ggsave("README_files/human2.png", width = 30, height = 15, units = "cm")
 Transcripts can be reordered combining `mRNA.order` and `CDS.order`
 
 ``` r
-p <- gGENEplot("gb_files/humanGHR.gb", line.overhang = 0.01, 
+p <- gGENEplot("gb_files/humanGHR.gb", min.size = 0.002, line.overhang = 0.01, 
                mRNA.order=c(11:1), CDS.order = c(10, 11, 8:3, 1,2,9))
 ggsave("README_files/human3.png", width = 30, height = 15, units = "cm")
 ```
@@ -230,7 +234,7 @@ ggsave("README_files/human5.png", width = 30, height = 15, units = "cm")
 
 ![](README_files/human5.png)
 
-naming the transcripts also allows to check the intron sizes so they do not desapear when the exon size is corrected
+naming the transcripts also allows to check the intron sizes so they do not desapear when the exon size is corrected (compare this and the previous diagram)
 
 ``` r
 newORDER <- c("var 1", "var 2", "var 3", "var 4", "var 5", "var 6", "var 7",
@@ -243,12 +247,32 @@ ggsave("README_files/human6.png", width = 30, height = 15, units = "cm")
 
 ![](README_files/human6.png)
 
+When using `check.introns`, introns minimum size is defined by `min.size` (default, 0.001, or user-defined)
+
+Fixing intron issue when using `min.size` shown before.
+
+``` r
+p <- gGENEplot("gb_files/sequence2.gb", bar = T, min.size = 200, 
+               mRNA.names = "GHR-I", CDS.names = "GHR-I", check.introns = T)
+ggsave("README_files/intronFIX.png", width = 30, height = 5, units = "cm")
+```
+
+before
+
+![](README_files/sequence6.png)
+
+after
+
+![](README_files/intronFIX.png)
+
 Further customization
 ---------------------
 
-Since the function returns a `ggplot`, object you can add your own modifications.
+Since the function returns a `ggplot` object, you can add your own modifications.
 
 ### Change title
+
+The gene diagram title can be easily modified with `ggtitle`.
 
 ``` r
 p <- gGENEplot("gb_files/humanTUB.gb", mRNA.order = c(2,1), bar = T, 
@@ -261,11 +285,13 @@ ggsave("README_files/tub.png", width = 30, height = 7, units = "cm")
 
 ### Add extra lines
 
+Furhter customizing the previous gene diagram, vertical lines can be added with `geom_vline`. The coordinates for `xintercept` can be obtained from the [genbank file](https://www.ncbi.nlm.nih.gov/nuccore/NC_000017.11?report=genbank&from=42609340&to=42615238).
+
 ``` r
 p <- p + geom_vline(xintercept = c(399, 447, 769, 881, 1084, 1251, 2736, 2804, 
                                    3088, 3167, 3608, 3734, 4308, 4394, 4510, 
                                    5073, 5157, 5318, 5505, 5702), 
-                    color = "gray", linetype = "dashed")
+                    color = "black", linetype = "dashed")
 ggsave("README_files/tub2.png", width = 30, height = 7, units = "cm")
 ```
 
@@ -273,7 +299,7 @@ ggsave("README_files/tub2.png", width = 30, height = 7, units = "cm")
 
 ### Add transcript names
 
-To add labels with `geom_text` x and y coordinates must be provided. `df.text` is created to add the
+To add labels with `geom_text` x and y coordinates must be provided. `df.text` is created to add the labels.
 
 ``` r
 # Create and store gene diagram
