@@ -120,7 +120,7 @@ ggsave("README_files/sequence6.png", width = 30, height = 5, units = "cm")
 
 ![](README_files/sequence6.png)
 
-As seen in these diagrams, using `min.size` can make some introns disappear. A solution to this is shown [below](###%20Naming%20transcripts).
+As seen in these diagrams, using `min.size` can make some introns disappear. A solution to this is shown [below](#naming-transcripts).
 
 Dealing with more than one transcript
 -------------------------------------
