@@ -2,7 +2,7 @@ gGENEplot <- function(source.file, min.size = 0.001,
                       line.color = "gray", line.size = 2, line.overhang = 0.05,
                       intron.color = "lightblue", exon.color = "blue", 
                       mRNA.names = NULL, CDS.names = NULL, 
-                      check.introns = T, names.order = NULL,
+                      check.introns = F, names.order = NULL,
                       mRNA.order = NULL, CDS.order = NULL,
                       bar = F, bar.pos = "bottom", bar.color = "black",
                       bar.size = line.size/2, bar.length = 0){
